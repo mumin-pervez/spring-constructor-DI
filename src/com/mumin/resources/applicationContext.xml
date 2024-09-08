@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- Bean definition for Department -->
+  <bean id="department" class="com.mumin.beans.Department">
+    <constructor-arg value="1"/> <!-- depId -->
+    <constructor-arg value="Developer"/> <!-- depName -->
+    <constructor-arg value="Frontend developer"/> <!-- depDetails -->
+  </bean>
+
+  <!-- Bean definition for Employee -->
+  <bean id="employee" class="com.mumin.beans.Employee">
+    <constructor-arg value="101"/> <!-- empId -->
+    <constructor-arg value="Sadat Hossain"/> <!-- empName -->
+    <constructor-arg ref="department"/> <!-- department (dependency) -->
+  </bean>
+
+</beans>
